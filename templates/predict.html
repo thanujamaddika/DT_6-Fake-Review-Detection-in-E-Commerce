@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake Review Detection Result</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+        }
+        .container {
+            max-width: 600px;
+            margin-top: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .btn-custom {
+            background: #ff416c;
+            color: white;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .btn-custom:hover {
+            background: #ff4b2b;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container text-center">
+        <h2><i class="fas fa-comments"></i> Fake Review Detection</h2>
+        <p>Your review prediction result is:</p>
+
+        <!-- Dynamic Prediction Display -->
+        <div class="alert {% if prediction == 'Fake' %}alert-danger{% else %}alert-success{% endif %}" role="alert">
+            <strong>Prediction:</strong> {{ prediction }}
+        </div>
+
+        <!-- Button to go back -->
+        <a href="/" class="btn btn-custom w-100 mt-3">Check Another Review</a>
+    </div>
+
+</body>
+</html>
